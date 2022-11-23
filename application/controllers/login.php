@@ -46,6 +46,7 @@ class login extends CI_Controller{
 		//memeriksa berapa kali login
 		$ip = $_SERVER['REMOTE_ADDR'];
 		$percobaan_login = $this->session->userdata($ip);
+		$this->session->mark_as_temp('login',60);
 		$this->session->set_userdata($ip,$percobaan_login+1);
 		if ($percobaan_login > 3) {
 			# code...

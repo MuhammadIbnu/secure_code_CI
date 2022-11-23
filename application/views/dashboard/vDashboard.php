@@ -72,6 +72,16 @@ talic,600italic">
 				</div>
 				<ul class="sidebar-menu" data-widget="tree">
 					<li class="header">MENU UTAMA</li>
+					<li>
+						<a href="<?= site_url('profile') ?>">Profile</a>
+					</li>
+
+					<?php if ($this->session->userdata('level') == 1) { ?>
+						<li>
+							<a href="<?= site_url('user') ?>">User</a>
+						</li>
+					<?php } ?>
+					
 				</ul>
 			</section>
 		</aside>
@@ -79,7 +89,7 @@ talic,600italic">
 		<div class="content-wrapper">
 			<section class="content">
 				<?php
-				if(isset($center)){
+				if (isset($center)) {
 					$this->load->view($center);
 				}
 				?>

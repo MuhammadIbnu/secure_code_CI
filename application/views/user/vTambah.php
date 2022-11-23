@@ -1,4 +1,12 @@
 <div class="box box-primary">
+	<?php
+	if (validation_errors()) {
+		echo "<div class='alert alert-danger'>" . validation_errors() . "</div>";
+	}
+	if ($this->session->flashdata('pesan_error')) {
+		echo "<div class='alert alert-danger'>" . $this->session->flashdata('pesan_error') . "</div>";
+	}
+	?>
 	<div class="box-header with-border">
 		<h3 class="box-title">Tambah Data User</h3>
 	</div>
